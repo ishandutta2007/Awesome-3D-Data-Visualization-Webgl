@@ -1,0 +1,202 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d18" />
+      <stop offset="50%" stop-color="#0e152e" />
+      <stop offset="100%" stop-color="#070913" />
+    </linearGradient>
+
+    <!-- Glowing Orbs Gradients -->
+    <radialGradient id="orb-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="orb-purple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#9d4edd" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#7928ca" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="orb-blue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4361ee" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#3a0ca3" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Text Gradients -->
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="35%" stop-color="#4cc9f0" />
+      <stop offset="70%" stop-color="#7209b7" />
+      <stop offset="100%" stop-color="#f72585" />
+    </linearGradient>
+    <linearGradient id="sub-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a0aec0" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="cyber-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#243b61" stroke-width="0.75" stroke-opacity="0.3" />
+    </pattern>
+
+    <!-- Perspective Grid Pattern -->
+    <linearGradient id="grid-fade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="70%" stop-color="#ffffff" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.8" />
+    </linearGradient>
+
+    <mask id="grid-mask">
+      <rect x="0" y="240" width="1200" height="180" fill="url(#grid-fade)" />
+    </mask>
+
+    <style>
+      .dynamic-pulse {
+        animation: pulseOrb 6s ease-in-out infinite alternate;
+      }
+      .dynamic-pulse-rev {
+        animation: pulseOrbRev 8s ease-in-out infinite alternate;
+      }
+      .wave-line {
+        stroke-dasharray: 8 6;
+        animation: dashMove 20s linear infinite;
+      }
+      .node-float1 { animation: floatSlow 5s ease-in-out infinite alternate; }
+      .node-float2 { animation: floatSlow 7s ease-in-out infinite alternate-reverse; }
+      .node-float3 { animation: floatSlow 6s ease-in-out infinite alternate; }
+      .globe-rotate {
+        animation: rotateGlobe 30s linear infinite;
+        transform-origin: 1020px 180px;
+      }
+
+      @keyframes pulseOrb {
+        0% { transform: scale(0.9) translate(-20px, -10px); opacity: 0.6; }
+        100% { transform: scale(1.15) translate(20px, 15px); opacity: 0.95; }
+      }
+      @keyframes pulseOrbRev {
+        0% { transform: scale(1.1) translate(15px, 20px); opacity: 0.7; }
+        100% { transform: scale(0.85) translate(-15px, -15px); opacity: 0.4; }
+      }
+      @keyframes dashMove {
+        to { stroke-dashoffset: -300; }
+      }
+      @keyframes floatSlow {
+        0% { transform: translateY(0px) scale(1); }
+        100% { transform: translateY(-14px) scale(1.05); }
+      }
+      @keyframes rotateGlobe {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </defs>
+
+  <!-- Deep Background -->
+  <rect width="1200" height="420" fill="url(#bg-grad)" rx="16" />
+
+  <!-- Dynamic Glowing Orbs in Background -->
+  <circle class="dynamic-pulse" cx="220" cy="140" r="180" fill="url(#orb-cyan)" />
+  <circle class="dynamic-pulse-rev" cx="980" cy="180" r="220" fill="url(#orb-purple)" />
+  <circle class="dynamic-pulse" cx="600" cy="300" r="160" fill="url(#orb-blue)" />
+
+  <!-- Cyber Grid Canvas Overlay -->
+  <rect width="1200" height="420" fill="url(#cyber-grid)" rx="16" />
+
+  <!-- Perspective 3D Plane Grid towards bottom -->
+  <g mask="url(#grid-mask)">
+    <line x1="0" y1="410" x2="1200" y2="410" stroke="#00f2fe" stroke-width="1.5" stroke-opacity="0.6" />
+    <line x1="0" y1="380" x2="1200" y2="380" stroke="#4cc9f0" stroke-width="1.2" stroke-opacity="0.4" />
+    <line x1="0" y1="355" x2="1200" y2="355" stroke="#7209b7" stroke-width="1.0" stroke-opacity="0.3" />
+    <line x1="0" y1="335" x2="1200" y2="335" stroke="#7209b7" stroke-width="0.8" stroke-opacity="0.2" />
+    <line x1="0" y1="320" x2="1200" y2="320" stroke="#7209b7" stroke-width="0.5" stroke-opacity="0.15" />
+    
+    <!-- Vanishing perspective lines -->
+    <line x1="600" y1="260" x2="-200" y2="420" stroke="#4361ee" stroke-width="1" stroke-opacity="0.4" />
+    <line x1="600" y1="260" x2="0" y2="420" stroke="#4361ee" stroke-width="1" stroke-opacity="0.4" />
+    <line x1="600" y1="260" x2="200" y2="420" stroke="#4361ee" stroke-width="1" stroke-opacity="0.4" />
+    <line x1="600" y1="260" x2="400" y2="420" stroke="#4361ee" stroke-width="1.2" stroke-opacity="0.4" />
+    <line x1="600" y1="260" x2="600" y2="420" stroke="#00f2fe" stroke-width="1.5" stroke-opacity="0.5" />
+    <line x1="600" y1="260" x2="800" y2="420" stroke="#4361ee" stroke-width="1.2" stroke-opacity="0.4" />
+    <line x1="600" y1="260" x2="1000" y2="420" stroke="#4361ee" stroke-width="1" stroke-opacity="0.4" />
+    <line x1="600" y1="260" x2="1200" y2="420" stroke="#4361ee" stroke-width="1" stroke-opacity="0.4" />
+    <line x1="600" y1="260" x2="1400" y2="420" stroke="#4361ee" stroke-width="1" stroke-opacity="0.4" />
+  </g>
+
+  <!-- Dynamic Geometric Data Flow Curves -->
+  <g opacity="0.6">
+    <path class="wave-line" d="M -50 280 Q 250 140, 550 240 T 1150 120 T 1300 200" fill="none" stroke="#00f2fe" stroke-width="2" />
+    <path class="wave-line" d="M -50 310 Q 300 200, 650 300 T 1200 180" fill="none" stroke="#f72585" stroke-width="1.5" stroke-dashoffset="50" />
+  </g>
+
+  <!-- Decorative 3D Wireframe Globe & Orbit Rings (Right Side) -->
+  <g class="globe-rotate" opacity="0.4">
+    <circle cx="1020" cy="180" r="100" fill="none" stroke="#00f2fe" stroke-width="1.2" stroke-dasharray="4 4" />
+    <ellipse cx="1020" cy="180" rx="100" ry="36" fill="none" stroke="#7209b7" stroke-width="1.2" />
+    <ellipse cx="1020" cy="180" rx="36" ry="100" fill="none" stroke="#4cc9f0" stroke-width="1.2" />
+    <ellipse cx="1020" cy="180" rx="90" ry="70" fill="none" stroke="#f72585" stroke-width="0.8" transform="rotate(30 1020 180)" />
+  </g>
+
+  <!-- Interactive Data Nodes / Constellations (Floating) -->
+  <g class="node-float1">
+    <circle cx="960" cy="110" r="5" fill="#00f2fe" />
+    <circle cx="960" cy="110" r="12" fill="none" stroke="#00f2fe" stroke-width="1" opacity="0.6" />
+    <text x="975" y="115" fill="#a0aec0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">GPU Point Clouds</text>
+  </g>
+  <g class="node-float2">
+    <circle cx="1080" cy="240" r="6" fill="#f72585" />
+    <circle cx="1080" cy="240" r="15" fill="none" stroke="#f72585" stroke-width="1" opacity="0.6" />
+    <text x="1000" y="275" fill="#a0aec0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">3D Geospatial Tiles</text>
+  </g>
+  <g class="node-float3">
+    <circle cx="880" cy="220" r="4.5" fill="#4cc9f0" />
+    <line x1="880" y1="220" x2="960" y2="110" stroke="#4cc9f0" stroke-width="1" stroke-dasharray="3 3" opacity="0.5" />
+    <line x1="880" y1="220" x2="1080" y2="240" stroke="#f72585" stroke-width="1" stroke-dasharray="3 3" opacity="0.4" />
+  </g>
+
+  <!-- Subtle Shading Backplate for Foreground Text Readability -->
+  <rect x="70" y="55" width="820" height="290" rx="14" fill="#060913" fill-opacity="0.65" backdrop-filter="blur(8px)" />
+
+  <!-- Foreground Title and Content -->
+  <g transform="translate(100, 105)">
+    <!-- Category Pill Badge -->
+    <rect x="0" y="0" width="220" height="30" rx="15" fill="#1e1e38" stroke="#4cc9f0" stroke-width="1" />
+    <circle cx="14" cy="15" r="5" fill="#00f2fe" />
+    <text x="28" y="19" fill="#00f2fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="11" letter-spacing="1.5">WEBGL2 &amp; WEBGPU 3D</text>
+
+    <!-- Main Title -->
+    <text x="0" y="75" fill="url(#title-grad)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="900" font-size="46" letter-spacing="-0.5">
+      Awesome 3D Data Viz
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="116" fill="url(#sub-grad)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="500" font-size="19" letter-spacing="0.2">
+      Hardware-Accelerated WebGL/WebGPU, 3D Geospatial Maps &amp; Graphs
+    </text>
+
+    <!-- Tagline Description -->
+    <text x="0" y="148" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="400" font-size="14">
+      Curated index of high-performance SaaS platforms, graphics engines &amp; open-source libraries.
+    </text>
+
+    <!-- Feature Pills -->
+    <g transform="translate(0, 175)">
+      <!-- Pill 1 -->
+      <rect x="0" y="0" width="125" height="26" rx="6" fill="#131c31" stroke="#2a3c5a" stroke-width="1" />
+      <text x="12" y="17" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="11">⚡ Deck.gl &amp; Cesium</text>
+
+      <!-- Pill 2 -->
+      <rect x="135" y="0" width="120" height="26" rx="6" fill="#131c31" stroke="#2a3c5a" stroke-width="1" />
+      <text x="12" y="17" fill="#c084fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="11">🌐 Three.js &amp; R3F</text>
+
+      <!-- Pill 3 -->
+      <rect x="265" y="0" width="135" height="26" rx="6" fill="#131c31" stroke="#2a3c5a" stroke-width="1" />
+      <text x="12" y="17" fill="#f472b6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="11">📊 Large-Scale Graphs</text>
+
+      <!-- Pill 4 -->
+      <rect x="410" y="0" width="135" height="26" rx="6" fill="#131c31" stroke="#2a3c5a" stroke-width="1" />
+      <text x="12" y="17" fill="#4ade80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="11">🌍 Point Clouds &amp; GIS</text>
+    </g>
+  </g>
+
+  <!-- Border Frame Glow -->
+  <rect x="0.5" y="0.5" width="1199" height="419" rx="16" fill="none" stroke="#243b61" stroke-width="1.2" opacity="0.7" />
+</svg>
