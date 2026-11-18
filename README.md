@@ -70,9 +70,9 @@ Open-source libraries provide the foundational building blocks for transparent, 
 
 ### Top Ranked Open-Source Repositories
 
-The open-source projects below are sorted in **descending order by GitHub star count**. Each badge dynamically reflects current stargazer metrics and links directly to that repository's stargazers page:
+The open-source projects below are sorted in **descending order by GitHub Stars_Count**. Each badge dynamically reflects current stargazer metrics and links directly to that repository's stargazers page:
 
-| 📦 Repository & Project | ⭐ Stars Badge | 📜 License | 🎯 Overview & Architectural Specialty |
+| 📦 Repository & Project | ⭐ Stars_Badge | 📜 License | 🎯 Overview & Architectural Specialty |
 |:---|:---:|:---:|:---|
 | **[Three.js](https://github.com/mrdoob/three.js)** | [![Three.js Stars](https://img.shields.io/github/stars/mrdoob/three.js?style=social&color=white)](https://github.com/mrdoob/three.js/stargazers) | `MIT` | The premier JavaScript 3D engine powering WebGL and WebGPU rendering, shaders, custom geometries, and web experiences. |
 | **[Apache ECharts](https://github.com/apache/echarts)** | [![ECharts Stars](https://img.shields.io/github/stars/apache/echarts?style=social&color=white)](https://github.com/apache/echarts/stargazers) | `Apache-2.0` | Comprehensive enterprise charting library extended via ECharts-GL for GPU-accelerated 3D globe, scatter, and surface visualizations. |
@@ -113,7 +113,7 @@ Contributions from data visualization practitioners and 3D developers are warmly
 1. **Fork the repository** on GitHub.
 2. **Add or enhance entries** in `README.md` following our structured tabular format.
    - For SaaS products: Provide specific starting price tiers, detailed free plan/trial limits, and company scale metrics.
-   - For Open-Source libraries: Include official repo URL, social star badge linked to stargazers, license, and technical overview.
+   - For Open-Source libraries: Include official repo URL, social Stars_Badge linked to stargazers, license, and technical overview.
 3. **Submit a Pull Request** with a descriptive summary of your additions.
 
 Please review our [Awesome List Guidelines](https://github.com/ishandutta2007/Awesome-Awesome-Awesome) before submitting.
